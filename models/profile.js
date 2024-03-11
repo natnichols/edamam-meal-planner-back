@@ -13,7 +13,6 @@ const shoppingListSchema = new Schema({
 const profileSchema = new Schema({
   name: String,
   photo: String,
-  recipes: [{type: Schema.Types.ObjectId, ref: 'Recipe'}],
   meals: [{type: Schema.Types.ObjectId, ref: 'Meal'}],
   shoppingList: [shoppingListSchema]
 },{
