@@ -50,6 +50,7 @@ async function addIngredient(req, res) {
     const recipeId = recipe[0]
     const profile = await Profile.findById(req.user.profile)
     .populate('recipes')
+    .populate('shoppingList.recipe')
     req.body.ingredients.forEach(ingredient => {
       profile.shoppingList.push({item: ingredient, recipe: recipeId})
     })
